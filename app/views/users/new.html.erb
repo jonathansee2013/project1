@@ -1,5 +1,11 @@
-<h2>Welcome to Renta Casa</h2>
+<h2>Create Account</h2>
 
-<p>Sign up if you're not a user.</p>
+<% if @user.errors.any? %>
+<ol>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ol>
+<% end %>
 
 <%= render partial: 'form' %>

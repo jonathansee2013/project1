@@ -1,0 +1,7 @@
+<h2>Images</h2>
+
+<% if @current_user == @user %>
+  <%= link_to 'Change Image', edit_photo_path(@image) %>
+<% end %>
+
+<p>Property photo: <%= @image.url %></p>

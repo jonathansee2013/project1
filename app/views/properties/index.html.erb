@@ -1,0 +1,14 @@
+<h2>Properties Index</h2>
+
+<ul>
+  <% @properties.each do |property| %>
+
+    <li>
+      <a href="/properties/<%= property.id %>"><%= property.address %> <%= property.suburb %> <%= property.state %> <%= property.postcode %></a>
+
+      <a data-method="delete" href="/properties/<%= property.id %>">Delete</a>
+
+    </li>
+
+<% end %>
+</ul>

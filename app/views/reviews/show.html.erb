@@ -1,0 +1,7 @@
+<h2>Review Details</h2>
+
+<% if @current_user == @user %>
+  <%= link_to 'Edit Review', edit_review_path(@review) %>
+<% end %>
+
+<p>Comment was "<%= @review.comment %>" and received a rating of <%= @review.rating %> out of 5.</p>

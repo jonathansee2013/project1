@@ -8,9 +8,14 @@
 
 
 User.destroy_all
-u1 = User.create username: "Abraham1", email: "abe1@gmail.com", password: "chicken"
-u2 = User.create username: "Benjamin2", email: "ben2@ymail.com", password: "chicken"
-u3 = User.create username: "Charles3", email: "chacha3@gmail.com", password: "chicken"
+u1 = User.create username: "Abraham1", email: "abe1@gmail.com", password: "chicken", user_type: "landlord"
+u2 = User.create username: "Benjamin2", email: "ben2@ymail.com", password: "chicken", user_type: "landlord"
+u3 = User.create username: "Charles3", email: "chacha3@gmail.com", password: "chicken", user_type: "landlord"
+
+u4 = User.create username: "testguy", email: 'test@test.com', password: 'chicken', user_type: 'tenant'
+
+u5 = User.create username: "admin", email: 'admin@admin.com', password: 'chicken', user_type: 'admin'
+
 
 puts "Created #{ User.all.length } users."
 
@@ -26,7 +31,7 @@ r1 = Review.create comment: "The room was spacious. I love it!", rating: 4
 r2 = Review.create comment: "Tiny room. Hate it", rating: 1
 r3 = Review.create comment: "The place is well-lit. I enjoy living here", rating: 5
 r4 = Review.create comment: "Large spacious room!", rating: 5
-r5 = Review.create comment: "Place is too small", rating: 5
+r5 = Review.create comment: "Place is too small", rating: 1
 
 puts "Created #{ Review.all.length } reviews."
 

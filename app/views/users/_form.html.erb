@@ -8,9 +8,14 @@
   <%= f.email_field :email %>
   <br>
 
+  <%= f.label :user_type %>
+  <%= f.select :user_type, options_for_select(@user_types) %>
+  <br>
+
   <%= f.label :password %>
   <%= f.password_field :password %>
   <br>
+
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
   <br>

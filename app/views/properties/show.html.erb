@@ -1,0 +1,9 @@
+<h2>Property Details</h2>
+
+<% if @current_user == @user %>
+  <%= link_to 'Edit Property', edit_property_path(@property) %>
+<% end %>
+
+<p>Address: <%= @property.address %> <%= @property.suburb %> <%= @property.state %> <%= @property.postcode %></p>
+
+<p>Description: <%= @property.description %></p>

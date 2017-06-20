@@ -1,7 +1,21 @@
 <h2>User Details</h2>
 
-
+<% if @current_user.present? && @current_user == @user %>
+  <%= link_to 'Edit profile', edit_user_path(@user) %>
+<% end %>
 
 <p>Username: <%= @user.username %></p>
 
 <p>Email: <%= @user.email %></p>
+
+<%= u.properties.each do |p| %>
+<p>
+  <%= p.address %>
+  <%= p.suburb %>
+  <%= p.state %>
+  <%= p.postcode %>
+</p>
+<p>
+  <%= p.description %>
+</p>
+<% end %>  

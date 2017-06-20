@@ -1,0 +1,31 @@
+
+<%= form_for @property do |f| %>
+
+<p>
+  <%= f.label :address %>
+  <%= f.text_field :address, required: true %>
+</p>
+
+<p>
+  <%= f.label :suburb %>
+  <%= f.text_field :suburb, required: true %>
+</p>
+
+<p>
+  <%= f.label :state %>
+  <%= f.text_field :state, required: true %>
+</p>
+
+<p>
+  <%= f.label :postcode %>
+  <%= f.text_field :postcode, required: true %>
+</p>
+
+<p>
+  <%= f.label :description %>
+  <%= f.text_field :description, required: true %>
+</p>
+
+<%= f.submit %>
+
+<% end %>

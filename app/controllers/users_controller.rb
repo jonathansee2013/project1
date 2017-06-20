@@ -1,13 +1,19 @@
 class UsersController < ApplicationController
 
   before_action :get_user, only: [ :show, :edit, :update ]
+  before_action :check_if_admin, only: [ :index ]
 
   def get_user
-    @user = User.find params["id"]
+    @user = User.find_by id: params["id"]
+    redirect_to users_path unless @user.present?
   end
 
   def new
     @user = User.new
+
+    @user_types = User.user_types.reject do |t|
+      t == "admin"
+    end
   end
 
   def create
@@ -42,7 +48,7 @@ class UsersController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:username, :email, :password_digest)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 
 end

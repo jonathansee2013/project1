@@ -1,0 +1,15 @@
+<h2>Reviews Index</h2>
+
+<ul>
+  <% @reviews.each do |review| %>
+
+    <li>
+      <a href="/reviews/<%= review.id %>">The review was <%= review.comment %> so it got a rating of <%= review.rating %>.</a>
+
+      <a data-method="delete" href="/reviews/<%= review.id %>">Delete</a>
+
+    </li>
+
+<% end %>
+
+</ul>

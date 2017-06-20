@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project1</title>
+    <title>Renta Casa</title>
     <%= csrf_meta_tags %>
-
+    <%= cloudinary_js_config %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -17,6 +17,9 @@
     <p>
       Welcome, <%= link_to @current_user.username, user_path(@current_user) %> | <%= link_to 'Logout', login_path, method: :delete %>
     </p>
+    <div class="welcome">
+    Welcome to Renta Casa!  
+    </div>
   <% end %>
   </nav>
 
