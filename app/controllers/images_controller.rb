@@ -40,9 +40,10 @@ class ImagesController < ApplicationController
   end
 
   def destroy
-    Image.find( params["id"] ).destroy
+    image = Image.find( params["id"] )
+    image.destroy
 
-    redirect_to images_path
+    redirect_to property_path(image.property)
   end
 
   private

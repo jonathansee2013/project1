@@ -46,9 +46,10 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    Review.find( params["id"] ).destroy
+    review = Review.find( params["id"] )
+    review.destroy
 
-    redirect_to reviews_path
+    redirect_to property_path(review.property)
   end
 
   private

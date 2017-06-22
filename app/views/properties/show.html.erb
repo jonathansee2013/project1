@@ -9,7 +9,9 @@
 <p>Property images: </p><% @property.images.each do |image| %>
   <a href="/images/<%= image.id %>">
     <img src="<%= image.url %>" alt=""></a>
-    <%= link_to 'Delete This Photo', property_path(image), data:{:confirm => "Are you sure?"}, :method => :delete %>
+
+    <%= link_to 'Delete This Photo', image_path(image), data:{:confirm => "Are you sure?"}, :method => :delete %>
+
 <% end %>
 
 <p>Description: <%= @property.description %></p>
@@ -20,7 +22,7 @@
   <br>
   <%= r.rating %>
   <br>
-  <%= link_to 'Delete This Review', property_path(r), data:{:confirm => "Are you sure?"}, :method => :delete %>
+  <%= link_to 'Delete This Review', review_path(r), data:{:confirm => "Are you sure?"}, :method => :delete %>
   <hr>
 <% end %>
 

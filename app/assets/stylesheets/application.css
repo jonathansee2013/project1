@@ -20,3 +20,8 @@ header {
   font-family: 'Calligraffitti', cursive;
   /*background-color: rgba(132, 148, 131, 0.8);*/
 }
+
+.container {
+  text-align: center;
+  max-width: 500px;
+}
