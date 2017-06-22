@@ -1,10 +1,12 @@
-<h2>Properties Index</h2>
+<h2>Properties to Rent</h2>
 
 <ul>
   <% @properties.each do |property| %>
 
     <li>
       <a href="/properties/<%= property.id %>"><%= property.address %> <%= property.suburb %> <%= property.state %> <%= property.postcode %></a>
+
+      <%= link_to 'Edit', edit_property_path(property) %>
 
       <a data-method="delete" href="/properties/<%= property.id %>">Delete</a>
 

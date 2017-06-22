@@ -26,6 +26,11 @@
   <%= f.text_field :description, required: true %>
 </p>
 
+<p>
+  <%= f.label :image %>
+  <%= f.file_field :image, multiple: true %>
+</p>
+
 <%= f.submit %>
 
 <% end %>

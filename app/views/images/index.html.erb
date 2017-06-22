@@ -4,7 +4,11 @@
   <% @images.each do |image| %>
 
   <li>
-    <a href="/images/<%= image.id %>"><%= image.url %></a>
+    <a href="/images/<%= image.id %>">
+
+      <img src="<%= image.url %>" alt="">
+
+    </a>
 
     <a data-method="delete" href="/images/<%= image.id %>">Delete</a>
   </li>

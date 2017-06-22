@@ -31,10 +31,14 @@ class UsersController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
     redirect_to root_path unless @current_user == @user
+    @user_types = User.user_types.reject do |t|
+      t == "admin"
+    end
   end
 
   def update

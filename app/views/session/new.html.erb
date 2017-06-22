@@ -1,5 +1,6 @@
 <h2>Login</h2>
 
+<div>
 <% if flash[:error].present? %>
   <p><strong> <%= flash[:error] %> </strong></p>
 <% end %>
@@ -17,3 +18,4 @@
   <%= submit_tag 'Login' %>
 
 <% end %>
+</div>

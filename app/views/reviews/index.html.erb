@@ -6,6 +6,8 @@
     <li>
       <a href="/reviews/<%= review.id %>">The review was <%= review.comment %> so it got a rating of <%= review.rating %>.</a>
 
+      <%= link_to 'Edit Review', edit_review_path(review) %>
+
       <a data-method="delete" href="/reviews/<%= review.id %>">Delete</a>
 
     </li>
