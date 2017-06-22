@@ -55,21 +55,28 @@ class PropertiesController < ApplicationController
   def update
     property = Property.find params["id"]
 
-    property.update({
-      address: params["address"],
-      suburb: params["suburb"],
-      state: params["state"],
-      postcode: params["postcode"],
-      description: params["description"]
-      })
-
+    property.update property_params
+    images = params["property"]["image"]
+    # Iterate through each one of the files that the user selected
+      # Call the current file image
+    images.each do |image|
+      # Upload whatever the current image is (e.g. A-01.jpg, A-02.jpg), and save all of the data that comes back from Cloudinary as response
+      response = Cloudinary::Uploader.upload image
+      # In that response hash, there is a key called secure_url, access that
+      url = response["secure_url"]
+      # Create a new record in the images database table using the URL that came back from Cloudinary
+      img = Image.create url: url
+      # Associate that new image with the property that we created above
+        # A property has many images, an image belongs to a property. We are saying that for the property that we just created - its collection of images should include whatever we just uploaded
+      property.images << img
+    end
     redirect_to property_path(property)
   end
 
   def destroy
     Property.find( params["id"] ).destroy
 
-    redirect_to properties_path
+    redirect_to user_path(@current_user)
   end
 
   private
