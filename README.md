@@ -1,6 +1,6 @@
 # README
 
-# Tic Tac Toe
+# Project 1
 
 ## Description
 
