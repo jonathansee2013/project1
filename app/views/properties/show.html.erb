@@ -6,12 +6,14 @@
 
 <p>Address: <%= @property.address %> <%= @property.suburb %> <%= @property.state %> <%= @property.postcode %></p>
 
-<p>Property images: </p><% @property.images.each do |image| %>
+<p>Property images: </p>
+<% @property.images.each do |image| %>
+<div>
   <a href="/images/<%= image.id %>">
     <img src="<%= image.url %>" alt=""></a>
-
+    <br>
     <%= link_to 'Delete This Photo', image_path(image), data:{:confirm => "Are you sure?"}, :method => :delete %>
-
+</div>
 <% end %>
 
 <p>Description: <%= @property.description %></p>
@@ -28,10 +30,11 @@
 
 <%= form_for Review.new do |f| %>
   <%= f.label :comment %>
-  <%= f.text_area :comment %>
+  <br>
+  <%= f.text_area :comment, size: "100x3" %>
   <br>
   <%= f.label :rating %>
-  <%= f.text_field :rating, size: 3 %>
+  <%= f.text_field :rating, size: 10 %>
   <br>
   <%= hidden_field_tag :property_id, @property.id %>
 

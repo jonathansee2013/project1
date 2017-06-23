@@ -2,7 +2,7 @@
 <%= form_for @review do |f| %>
 
   <%= f.label :comment %>
-  <%= f.text_field :comment, required: true %>
+  <%= f.text_field :comment, required: true, :size=>"50", :maxlength=>"254" %>
   <br>
 
   <%= f.label :rating %>
